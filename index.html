@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <title>car price prediction</title>
+</head>
+
+<body>
+    <div style="color: black">
+        <form action="{{url_for('predict')}}" method="POST">
+            <h2>predict car selling price</h2>
+            <h3>Year</h3>
+            <input id="first" name="Year" type="number">
+            <h3>Showroom Price</h3>
+            <input id="second" name="Present_Price" type="number", required = "required">
+            <h3>Km_driven</h3>
+            <input id="third" name="Kms_Driven" required = "required">
+            <h3>Previous Owners</h3>
+            <input id="fourth" name="Owner" required = "required">
+            <h3>Fuel_Type</h3>
+            <select id="fifth" name="Fuel_Type_Petrol" required = "required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h3>Seller type</h3>
+            <select id="sixth" name="Seller_Type_Individual" required = "required">
+                <option value="Individual">Individual</option>
+                <option value="Dealer">Dealer</option>
+            </select>
+            <h3>Transmission Type</h3>
+            <select id="seventh" name="Transmission_Manual" required = "required">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <br><br>
+            <button id="sub" type="submit">Calculate the selling price</button>
+            <br>
+        </form>
+
+        <h3>{{Prediction_text}}</h3>
+    
+    </div>
+
+
+</body>
+</html>
